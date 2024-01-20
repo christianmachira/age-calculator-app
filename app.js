@@ -6,9 +6,11 @@ const dayOt = document.getElementById("DD");
 const monthOt = document.getElementById("MM");
 const yearOt = document.getElementById("YY");
 
+const moment = require('moment');
 const form = document.querySelector("form");
 
-form.addEventListener("submit", submitFnc);
+// adding an event listener for the submit button
+form.addEventListener("submit", submitFnc); 
 
 const date = new Date();
 let day = date.getDate();
@@ -46,24 +48,50 @@ function validator() {
     return validate;
 }
 // fucntion that calculates the time inputted from current time
+// function submitFnc(e) {
+//     e.preventDefault();
+//     if (validator()) {
+//         if (dayIns.value > day) {
+//             day = day + months[month - 1];
+//             month = month - 1;
+//         }
+//         if (monthIns.value > month) {
+//             month = month + 12;
+//             year = year - 1;
+//         }
+        
+//         const finalDay = day - dayIns.value;
+//         const finalMonth = month - monthIns.value;
+//         const finalYear = year - yrsIns.value;
+        
+//         dayOt.innerHTML = finalDay;
+//         monthOt.innerHTML = finalMonth;
+//         yearOt.innerHTML = finalYear;
+//     }
+// }
+
+
 function submitFnc(e) {
     e.preventDefault();
     if (validator()) {
-        if (dayIns.value > day) {
-            day = day + months[month - 1];
-            month = month - 1;
-        }
-        if (monthIns.value > month) {
-            month = month + 12;
-            year = year - 1;
-        }
-        
-        const finalDay = day - dayIns.value;
-        const finalMonth = month - monthIns.value;
-        const finalYear = year - yrsIns.value;
-        
-        dayOt.innerHTML = finalDay;
-        monthOt.innerHTML = finalMonth;
-        yearOt.innerHTML = finalYear;
+        // Get the input date
+        const inputDate = moment([yrsIns.value, monthIns.value - 1, dayIns.value]);
+
+        // Get the current date
+        const currentDate = moment([year, month - 1, day]);
+
+        // Calculate the difference in years, months, and days
+        const years = currentDate.diff(inputDate, 'years');
+        inputDate.add(years, 'years');
+
+        const months = currentDate.diff(inputDate, 'months');
+        inputDate.add(months, 'months');
+
+        const days = currentDate.diff(inputDate, 'days');
+
+        // Display the results
+        yearOt.textContent = years + " years";
+        monthOt.textContent = months + " months";
+        dayOt.textContent = days + " days";
     }
 }
