@@ -45,6 +45,7 @@ function validator() {
         validate = true;
     }
 })
+
     return validate;
 }
 // fucntion that calculates the time inputted from current time
