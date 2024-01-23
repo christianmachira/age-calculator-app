@@ -96,3 +96,31 @@ small{
 .output span{
     color:var(--purple);
 }
+@media screem and (max-width:600px) {
+    body{
+        display:flex;
+    }
+    .card{
+        width:300px;
+        display:flex;
+    }
+    .container{
+        padding:10px;
+    }
+    .form_container{
+        display:flex;
+        justify-content: space-between;
+    }
+    .submit_class{
+        position:absolute;
+    }
+    .submit_btn{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+    .output h1{
+        font-size: 3rem;
+    }
+}
