@@ -104,7 +104,7 @@ small{
         display:flex;
     }
     .card{
-        width:300px;
+        width:350px;
         display:flex;
     }
     .container{
@@ -114,10 +114,14 @@ small{
     }
     .form_container{
         display:flex;
+        margin-bottom: 5rem;
         justify-content: space-between;
     }
+    input{
+        width:80px;
+    }
     .submit_class{
-        position:absolute;
+        position:relative;
     }
     .submit_btn{
         position:absolute;
