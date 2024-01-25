@@ -1,4 +1,4 @@
-root{
+:root{
 --white:hsl(0, 0%, 100%);
 --off-white:hsl(0, 0%, 94%);
 --light-grey:hsl(0, 0%, 86%);
@@ -15,7 +15,7 @@ root{
     font-family:'Poppins', sans-serif;
 }
 body{
-    background-color:var(--off-white);
+    background-color:hsl(0, 0%, 86%);
     display:flex;
     min-height:100vh;
     align-items:center;
@@ -29,7 +29,9 @@ body{
 .card{
     display:flex;
     flex-direction:column;
+    padding:20px;
     border-radius: 1rem 1rem 10rem 1rem;
+    background-color: hsl(0, 0%, 100%);
     width:600px;
     
 }
@@ -43,6 +45,7 @@ form{
 }
 .block{
     display:flex;
+    flex-direction:column;
 }
 .block label{
     font-weight: 600;
@@ -51,27 +54,24 @@ form{
 input{
     width:100px;
     padding:0.5rem;
-    border-radius:0.5rem;
-    border:1px solid var(--light-grey);
+    border-radius:5px;
+    border: 1px solid var(--light-grey);
     display:flex;
     align-items:center;
-    font-size: 1.5rem;
-    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 :-ms-input-placeholder{
     color:var(--smokey-grey);
     font-weight:800;
-    font-size:1.5rem;
+    font-size:1.0rem;
 }
 .submit_form{
     display:flex;
     justify-content: center;
 }
-.submit_btn{
-    color:var(--purple);
-    padding:10px;
-    width: 30px;
-    height: 30px;
+.submit_button{
+    background-color: hsl(259,100%,65%);
+    padding:1rem;
     border-radius: 50%;
     border:none;
     display:flex;
@@ -79,16 +79,18 @@ input{
     align-items: center;
     cursor:pointer;
 }
-.submit_block hr{
+.submit_class{
+    display:flex;
+    align-items:center;
+}
+.submit_class hr{
     width:100%;
 }
 .output h1{
     font-size: 4rem;
     font-weight: 800;
     font-style:italic;
-    text-transform: uppercase;
     color:var(--off-black);
-    margin:1rem 0;
     height:fit-content;
 }
 small{
